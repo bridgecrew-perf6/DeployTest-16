@@ -1,4 +1,6 @@
--- create database ocaiquiz;
+ALTER DATABASE questionario_ocai OWNER TO postgres;
+
+\connect questionario_ocai
 
 -- Table: registro_questao
 CREATE TABLE registro_questao(

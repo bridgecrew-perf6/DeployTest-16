@@ -18,13 +18,13 @@ services:
     depends_on:
       - php
       - postgres
-    
+
     networks:
       - webapp
 
   php:
     build:
-      context: .
+      context: ./
       dockerfile: docker/php/Dockerfile
     container_name: app_php
     volumes:
@@ -35,7 +35,9 @@ services:
       - webapp
 
   postgres:
-    image: docker/database/Dockerfile
+    build:
+      context: ./
+      dockerfile: docker/database/Dockerfile
     container_name: app_postgres
     restart: always
     environment:

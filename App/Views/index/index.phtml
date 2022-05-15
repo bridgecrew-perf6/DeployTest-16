@@ -1,0 +1,334 @@
+<?php require "../App/Views/partials/header.phtml"; ?>
+
+<section class="quiz-area">
+    <form id="quizForm">
+
+    <div class="container grid">
+
+        <!-- INTRO BOX -->
+        <div class="quiz-box personal-data-box">
+            <h3 class="quiz-title">Digite os seus dados</h3>
+            <div class="flex quiz-personal-data-inputs">
+                <label>
+                    Nome: 
+                <input type="text" class="form_data" name="nome" id="nome" placeholder="Seu nome">
+                </label>
+                
+                <label>
+                    E-mail:
+                <input type="text" class="form_data" name="email" id="email" size="30" placeholder="email@univates.br">
+                </label>
+            </div>
+
+            <p class="quiz-message"></p>
+                    
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="startQuiz()">INICIAR</button>
+            </div>
+        </div>
+
+
+        <!-- Quiz box 0 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">1. CARACTERÍSTICAS DOMINANTES</h3>
+
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q00" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q01" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q02" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q03" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="nextQuestion(2)">Avançar</button>
+            </div>
+
+        </div>
+
+        <!-- Quiz box 1 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">2. LIDERANÇA NA ORGANIZAÇÃO</h3>
+                        
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q10" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q11" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q12" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q13" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+            
+
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="previousQuestion(1)">Retroceder</button>
+                <button type="button" class="btn" onclick="nextQuestion(3)">Avançar</button>
+            </div>
+
+        </div>
+
+        <!-- Quiz box 2 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">3. ADMINISTRAÇÃO DAS PESSOAS E EQUIPES</h3>
+
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q20" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q21" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q22" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q23" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="previousQuestion(2)">Retroceder</button>
+                <button type="button" class="btn" onclick="nextQuestion(4)">Avançar</button>
+            </div>
+
+        </div>
+
+        <!-- Quiz box 3 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">4. COESÃO INTERNA</h3>
+
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q30" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q31" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q32" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q33" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="previousQuestion(3)">Retroceder</button>
+                <button type="button" class="btn" onclick="nextQuestion(5)">Avançar</button>
+            </div>
+
+        </div>
+
+
+        <!-- Quiz box 4 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">5. ÊNFASE ESTRATÉGICA</h3>
+
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q40" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q41" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q42" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q43" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="previousQuestion(4)">Retroceder</button>
+                <button type="button" class="btn" onclick="nextQuestion(6)">Avançar</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- Quiz box 5 -->
+        <div class="quiz-box hidden">
+            <h3 class="quiz-title">6. CRITÉRIO DE RECONHECIMENTO DE SUCESSO</h3>
+
+            <ul class="quiz-options-list">
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="cla" class="quantity" min="0" max="100" name="q50" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="inovacao" class="quantity" min="0" max="100" name="q51" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="resultado" class="quantity" min="0" max="100" name="q52" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+                <li class="quiz-options-item">
+                    <p>A organização é um lugar muito pessoal. É como se fosse a extensão da família. As pessoas compartilham bastante idéias e sentimentos entre si.</p>
+                    <div class="number-input">
+                        <button tabindex="-1" type="button" onclick="stepDownNumberField(this)"></button>
+                        <input data-category="hierarquica" class="quantity" min="0" max="100" name="q53" value="0" type="number">
+                        <button tabindex="-1" type="button" onclick="stepUpNumberField(this)" class="plus"></button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="quiz-message">Distribua os pontos somando um total de <strong>100</strong></p>
+
+
+            <div class="flex controls-btn">
+                <button type="button" class="btn" onclick="previousQuestion(5)">Retroceder</button>
+                <!-- return false; para evitar o comportamento padrão de enviar do form -->
+                <button type="button" id="submitBtn" class="btn btn-finished" onclick="sendData(); return false;">ENVIAR</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    </form>
+
+</section>
+
+
+<?php require "../App/Views/partials/footer.phtml"; ?>
