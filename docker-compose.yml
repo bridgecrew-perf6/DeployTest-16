@@ -1,8 +1,5 @@
 version: '3'
 
-networks:
-  webapp:
-
 services:
   nginx:
     image: nginx:stable-alpine
@@ -13,19 +10,17 @@ services:
       - php
     volumes:
       - ./:/var/www/html
-      - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf:rw
-      - ./docker/logs/nginx:/var/logs/nginx:rw
+      - ./environment/nginx/site.conf:/etc/nginx/conf.d/default.conf:rw
+      - ./environment/logs/nginx:/var/logs/nginx:rw
     depends_on:
       - php
       - postgres
-
     networks:
       - webapp
 
   php:
     build:
-      context: ./
-      dockerfile: docker/php/Dockerfile
+      context: ./environment/php
     container_name: app_php
     volumes:
       - ./:/var/www/html
@@ -35,19 +30,25 @@ services:
       - webapp
 
   postgres:
-    build:
-      context: ./
-      dockerfile: docker/database/Dockerfile
+    image: postgres:14-alpine
     container_name: app_postgres
     restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./environment/database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - postgres_data:/var/lib/postgresql/data:z
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: questionario_ocai
       POSTGRES_HOST_AUTH_METHOD: "trust"
-    ports:
-      - '5432:5432'
-    volumes:
-      - ./docker/postgres:/var/lib/postgresql/data
     networks:
       - webapp
+
+networks:
+  webapp:
+
+
+volumes:
+  postgres_data:

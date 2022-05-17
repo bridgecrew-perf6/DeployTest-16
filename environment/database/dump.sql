@@ -3,7 +3,7 @@ ALTER DATABASE questionario_ocai OWNER TO postgres;
 \connect questionario_ocai
 
 -- Table: registro_questao
-CREATE TABLE registro_questao(
+CREATE TABLE IF NOT EXISTS registro_questao(
 id SERIAL NOT NULL PRIMARY KEY, 
 nome VARCHAR(150) NOT NULL, 
 email VARCHAR(100) NOT NULL, 
